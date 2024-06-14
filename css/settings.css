@@ -1,0 +1,124 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  transition: background-color 0.5s;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+header {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  margin-top: 15%;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 80%;
+  max-width: 600px;
+  animation: fadeIn 2s;
+}
+
+.title {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Profile picture styles */
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 999; /* Ensure it's above other elements */
+}
+
+#home-icon-link {
+  text-decoration: none;
+  color: #007bff;
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s, color 0.3s;
+}
+
+#home-icon {
+  font-size: 2.5em;
+}
+
+#home-icon-link:hover {
+  transform: scale(1.1);
+  color: #0056b3;
+}
+
+nav {
+  /* display: flex; */
+  justify-content: space-around;
+  position: relative;
+  top: 850%; /* Move the nav up */
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 400; /* Use normal weight */
+  font-size: 16px;
+  transition: color 0.3s, background-color 0.3s, border-color 0.3s; /* Smooth transition */
+  white-space: nowrap; /* Ensure the links do not wrap to multiple lines */
+  padding: 8px 12px; /* Padding for layout */
+  border: 2px solid transparent; /* Border for layout with smooth transition */
+  border-radius: 5px; /* Slightly rounded corners */
+  text-shadow: 0.5px 0 0 currentColor; /* Slightly bolder effect */
+}
+
+nav a:hover {
+  color: #140094; /* Change the color on hover */
+  background-color: rgba(
+    255,
+    215,
+    0,
+    0.2
+  ); /* Light background color on hover */
+  border-color: #ffd700; /* Change border color on hover */
+}
+
+.darkmode nav a {
+  border-color: #ffd700;
+}
+
+.darkmode nav a:hover {
+  background-color: rgba(255, 215, 0, 0.2);
+  color: #fff;
+}
+
+.darkmode header {
+  background-color: #444;
+  background-image: linear-gradient(to top, #2b2b2b, #444);
+}
+
+.darkmode #home-icon-link:hover {
+  color: #00aaff;
+}
