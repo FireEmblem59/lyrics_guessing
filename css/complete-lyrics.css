@@ -1,0 +1,314 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  transition: background-color 0.5s;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+header {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  margin-top: 15%;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 80%;
+  max-width: 600px;
+  animation: fadeIn 2s;
+}
+
+.title {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.button {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 20px;
+  color: white; /* Set text color to white */
+  background-color: #007bff;
+  border: none;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Profile picture styles */
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 999; /* Ensure it's above other elements */
+  margin-right: 20px; /* Move more to the left */
+}
+
+/* Dropdown menu styles */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 50px;
+  right: 30px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.dropdown-menu.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeIn 0.5s forwards;
+}
+
+.dropdown-menu.hide {
+  animation: fadeOut 5s forwards;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 12px 20px;
+  text-decoration: none;
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+  font-size: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f0f0f0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+#home-icon-link {
+  text-decoration: none;
+  color: #007bff;
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s, color 0.3s;
+}
+
+#home-icon {
+  font-size: 2.5em;
+  margin-left: 10px; /* Move more to the right */
+}
+
+#home-icon-link:hover {
+  transform: scale(1.1);
+  color: #0056b3;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 5%;
+  gap: 16px; /* Space between items based on the golden ratio */
+}
+
+nav li {
+  flex: 1;
+  text-align: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 400; /* Use normal weight */
+  font-size: 16px;
+  transition: color 0.3s, background-color 0.3s, border-color 0.3s; /* Smooth transition */
+  white-space: nowrap; /* Ensure the links do not wrap to multiple lines */
+  padding: 8px 12px; /* Padding for layout */
+  border: 2px solid transparent; /* Border for layout with smooth transition */
+  border-radius: 5px; /* Slightly rounded corners */
+  text-shadow: 0.5px 0 0 currentColor; /* Slightly bolder effect */
+}
+
+nav a:hover {
+  color: #140094; /* Change the color on hover */
+  background-color: rgba(
+    255,
+    215,
+    0,
+    0.2
+  ); /* Light background color on hover */
+  border-color: #ffd700; /* Change border color on hover */
+}
+
+#lyrics-display {
+  white-space: pre-line; /* Preserves line breaks */
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  margin: 20px;
+  padding: 20px;
+}
+
+/* Hide the restart-button by default */
+#restart-button {
+  display: none; /* Hide the button by default */
+  margin-bottom: 10px;
+}
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  text-align: center;
+  position: relative;
+  border-radius: 5px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.show {
+  display: block;
+}
+
+/* Add specific styles for each difficulty level */
+.lyrics.easy {
+  background-color: lightgreen;
+  color: black;
+}
+
+.lyrics.medium {
+  background-color: #ffc107;
+  color: black;
+}
+
+.lyrics.hard {
+  background-color: tomato;
+  color: white;
+}
+
+.timer.easy {
+  color: lightgreen;
+}
+
+.timer.medium {
+  color: #ffc107;
+}
+
+.timer.hard {
+  color: tomato;
+}
+
+.darkmode nav a {
+  border-color: #ffd700;
+  color: #e2e0e0;
+}
+
+.darkmode nav a:hover {
+  background-color: rgba(255, 215, 0, 0.2);
+  color: #fff;
+  border-color: #ffd700;
+}
+
+.darkmode .dropdown-menu {
+  background-color: #333; /* Dark mode background color */
+  color: #fff; /* Dark mode text color */
+}
+
+.darkmode .dropdown-menu a {
+  color: #fff; /* Dark mode text color */
+  background-color: #333; /* Dark mode background color */
+}
+
+.darkmode .dropdown-menu a:hover {
+  background-color: #444; /* Darken the hover background color */
+}
+
+.darkmode header {
+  background-image: linear-gradient(to top, #2b2b2b, #444);
+}
+
+.darkmode #home-icon-link:hover {
+  color: #00aaff;
+}
+
+body.darkmode {
+  background-color: #2b2b2b;
+}
+
+.darkmode .container {
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Adjust border color */
+  background-color: var(--dark-color);
+  color: #fff;
+}

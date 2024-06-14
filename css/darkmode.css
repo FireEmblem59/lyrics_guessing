@@ -1,0 +1,121 @@
+/* darkmode.css */
+
+/* ------------ VARIABLES ------------ */
+:root {
+  /* COLORS */
+  --color: #9176ff;
+  --dark-color: #2b2b2b;
+  --dark-icon-color: #fff;
+  --light-border-color: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* Define a lighter border color */
+}
+
+/* ------------ BASE ------------ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* -------------- DARKMODE -------------- */
+body.darkmode {
+  background-color: var(--dark-color);
+}
+
+.container {
+  position: relative;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border: 2px solid var(--light-border-color); /* Adjust border color */
+}
+
+.darkmode .btn {
+  background-color: #fff;
+  width: 5em;
+  height: 2.5em;
+  border-radius: 10em;
+  padding: 0 0.5em;
+  position: relative;
+  z-index: 1;
+  box-shadow: inset 0 8px 60px rgba(0, 0, 0, 0.3),
+    inset 8px 0 8px rgba(0, 0, 0, 0.3), inset 0 -4px 4px rgba(0, 0, 0, 0.3);
+}
+
+.darkmode .btn__indicator {
+  transform: translateX(2em);
+  background-color: var(--dark-color);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
+}
+
+.darkmode .btn__icon {
+  color: var(--dark-icon-color);
+}
+
+/* ------------ DARKMODE -------------- */
+body.darkmode {
+  background-color: var(--dark-color);
+  color: #fff; /* Change text color to white in dark mode */
+}
+
+.darkmode .container {
+  border-color: var(--light-border-color); /* Adjust border color */
+}
+
+.darkmode .container,
+.darkmode nav a,
+.darkmode main,
+.darkmode footer {
+  background-color: var(--dark-color);
+  color: #fff;
+}
+
+.darkmode nav a {
+  color: #fff; /* Change navigation link color in dark mode */
+}
+
+.darkmode .btn__icon.animated {
+  animation: spin 0.5s forwards; /* Ensure the animation works correctly */
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 
+Explanation:
+
+This CSS rule applies styles to anchor elements within the navigation bar (nav) when the dark mode is active. It utilizes CSS custom properties to define colors, providing flexibility and ease of customization. 
+
+Example:
+
+Consider the following HTML structure:
+
+<nav>
+  <a href="#">Link 1</a>
+  <a href="#">Link 2</a>
+</nav>
+
+In the dark mode:
+
+- The border color of anchor elements within the navigation bar will be set to the value of the custom property --color (defined in the root).
+- When hovering over anchor elements within the navigation bar, the background color will change to the value of the custom property --color, and the text color will become white (#fff).
+
+
+
+.darkmode nav a {
+  border-color: var(--color); Change border color to default color in dark mode
+}
+
+.darkmode nav a:hover {
+  background-color: var(--color); Change background color on hover in dark mode
+  color: #fff;
+}
+*/
