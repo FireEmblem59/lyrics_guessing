@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Complete the Lyrics</title>
+    <link rel="stylesheet" href="../css/complete-lyrics.css" />
+  </head>
+  <body>
+    <header>
+      <a href="../index.html" id="home-icon-link">
+        <ion-icon name="home-outline" id="home-icon"></ion-icon>
+      </a>
+      <nav>
+      <ul>
+        <a href="../html/complete-lyrics.html">Complete the Lyrics</a>
+        <a href="../html/multiple-choice.html">Multiple Choice</a>
+      </ul>
+    </nav>
+      <img
+        src="../images/pfp.jpg"
+        alt="Profile Picture"
+        id="profile-pic"
+        class="profile-pic"
+      />
+      <div id="dropdown-menu" class="dropdown-menu">
+        <a href="../html/settings.html">Settings</a>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="lyrics-container">
+        <p id="song-info"></p>
+        <p id="lyrics-display"></p>
+        <button id="check-lyrics-button" class="button">Check Lyrics</button>
+        <button id="restart-button" class="button">Next</button>
+      </div>
+      <div class="buttons-container">
+        <button id="easy-button" class="button">Easy</button>
+        <button id="medium-button" class="button">Medium</button>
+        <button id="hard-button" class="button">Hard</button>
+      </div>
+      <p id="timer">Time: 0s</p>
+      <p id="score"></p>
+    </div>
+
+    <!-- Modal -->
+    <div id="song-info-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeSongInfoModal()">&times;</span>
+        <h2 id="song-title"></h2>
+        <p id="song-artist"></p>
+        <img
+          id="album-image"
+          src=""
+          alt="Album Cover"
+          width="200"
+          height="200"
+        />
+        <div id="correct-answer" style="white-space: pre-wrap;"></div>
+          <p id="correct-answer"></p>
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/dark_light.js"></script>
+    <script src="../js/complete-lyrics.js"></script>
+    <script src="../js/script.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
