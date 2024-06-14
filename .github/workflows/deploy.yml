@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main # Adjust branch name as needed
+      - main
 
 jobs:
   deploy:
@@ -26,8 +26,10 @@ jobs:
           sed -i 's#const client_id = "";#const client_id = "${{ secrets.CLIENT_ID_SPOTIFY }}";#' js/complete-lyrics.js
           sed -i 's#const client_secret = "";#const client_secret = "${{ secrets.SECRET_CLIENT_ID_SPOTIFY }}";#' js/complete-lyrics.js
 
-      - name: Build and deploy to GitHub Pages
+      - name: Build project
+        run: npm run build
+
+      - name: Deploy to GitHub Pages
         run: |
-          npm run build
           npm install -g gh-pages
           gh-pages -d build -b main
