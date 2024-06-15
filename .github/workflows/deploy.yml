@@ -18,9 +18,6 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Install dependencies
-        run: npm install
-
       - name: Replace API keys in JavaScript file
         run: |
           sed -i "s#const client_id = \\"\\";#const client_id = \\"${{ secrets.CLIENT_ID_SPOTIFY }}\\";#" js/complete-lyrics.js
