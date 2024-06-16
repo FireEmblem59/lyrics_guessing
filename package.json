@@ -1,12 +1,17 @@
 {
   "name": "lyrics_guessing",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "author": "FireEmblem59",
+  "license": "MIT",
   "scripts": {
     "build": "webpack --config webpack.config.js"
   },
-  "keywords": [],
-  "author": "FireEmblem59",
-  "license": "ISC"
+  "devDependencies": {
+    "webpack": "^5.0.0",
+    "webpack-cli": "^4.0.0",
+    "babel-loader": "^8.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "dotenv": "^10.0.0"
+  }
 }
