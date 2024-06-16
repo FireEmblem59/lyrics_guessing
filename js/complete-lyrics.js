@@ -17,8 +17,8 @@ let spotifyToken = "";
 // Maximum word count for the line user needs to guess
 let maxWordCount = 9;
 
-const client_id = "";
-const client_secret = "";
+const client_id = process.env.CLIENT_ID_SPOTIFY;
+const client_secret = process.env.SECRET_CLIENT_ID_SPOTIFY;
 
 const authOptions = {
   method: "POST",
