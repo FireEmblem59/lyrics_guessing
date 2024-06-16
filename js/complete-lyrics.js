@@ -20,6 +20,9 @@ let maxWordCount = 9;
 const client_id = process.env.CLIENT_ID_SPOTIFY;
 const client_secret = process.env.SECRET_CLIENT_ID_SPOTIFY;
 
+console.log("Client ID:", client_id);
+console.log("Client Secret:", client_secret);
+
 const authOptions = {
   method: "POST",
   headers: {

@@ -1,0 +1,12 @@
+{
+  "name": "lyrics_guessing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --config webpack.config.js"
+  },
+  "keywords": [],
+  "author": "FireEmblem59",
+  "license": "ISC"
+}
