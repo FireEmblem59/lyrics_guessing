@@ -1,5 +1,5 @@
 [build]
-  publish = "lyrics_guessing"
+  publish = "frontend"
   functions = "backend/functions"
 
 [[redirects]]
